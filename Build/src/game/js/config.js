@@ -1,7 +1,0 @@
-var CONFIG = {
-    "AD_TIMEOUT": 0,
-    "INACTIVE_TIMEOUT": 0,
-    "CLOSE_TIMEOUT": 5,
-    "AUTOPLAY_INTERVAL": 10,
-    "HINT_DURATION": 2
-};

@@ -1,0 +1,119 @@
+@media all and (orientation: landscape) {
+    #vungle-header.landscape-light a {
+        color: #ffffff;
+        text-shadow: rgba(0, 0, 0, 0.37) 0 1px 2px;
+    }
+    #vungle-header.landscape-light a:active {
+        color: #b4b4b4;
+    }
+    #vungle-header.landscape-dark a {
+        color: rgba(126, 126, 126, 1);
+        text-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
+    }
+    #vungle-header.landscape-dark a:active {
+        color: rgba(54, 54, 54, 1);
+    }
+    #vungle-footer.landscape-center {
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+    }
+    #vungle-footer.landscape-left {
+        left: 5px;
+        right: auto;
+        text-align: left;
+    }
+    #vungle-footer.landscape-right {
+        left: auto;
+        right: 5px;
+        text-align: right;
+    }
+    #vungle-footer.landscape-light span {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    #vungle-footer.landscape-dark span {
+        color: rgba(126, 126, 126, 0.8);
+    }
+    #level-complete {
+        width: 40%;
+    }
+}
+
+@media all and (min-width: 768px) and (orientation: portrait) {
+    #dialog{
+        width: 50%;
+        height: 10%;
+    }
+    #character {
+        width: 80%;
+    }
+
+    #cta-container, #cta-container-final {
+        width: 60%;
+    }
+
+    #chair {
+        width: 45%;
+    }
+}
+
+@media all and (min-width: 768px) and (orientation: landscape) {
+
+    body {
+        background-position-y: 10%;
+    }
+   #dialog {
+    width: 30%;
+    height: 10%;
+   }
+
+   #chair {
+    width: 30%;
+    top: 45%;
+    left: 52%; 
+   }
+}
+
+
+
+@media all and (min-width: 823px ) and (max-height: 415px) and (orientation: landscape) {
+    body{
+        // background-size: auto;
+        background-position-y: 37%;
+    }
+
+    #dialog{
+        width: 28%;
+        height: 15%;
+    }
+
+    #chair {
+        width: 28%;
+        top: 50%;
+    }
+
+    #character {
+        width: 45%;
+    }
+}
+
+
+/*iPhone X portrait*/
+@media (min-device-height: 724px) and (max-device-width: 376px) and (min-aspect-ratio: 354/724) and (orientation: portrait) {
+    #dialog {
+        width: 70%;
+        height: 12%;
+    }
+
+    #chair {
+        width: 60%;
+    }
+}
+
+/*iPhone X landscape*/
+@media (min-aspect-ratio: 724/354) and (orientation: landscape) {
+    #chair {
+        top: 62%;
+    }
+}

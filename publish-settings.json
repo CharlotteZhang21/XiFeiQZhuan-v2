@@ -1,0 +1,56 @@
+{
+    "versions": [{
+        "label": "vungle-toyblast-ios-piec-match3-control",
+        "settings": {
+            "PiecSettings.numberOfInteractions": 6,
+            "PiecSettings.numberOfMovesBeforeCtaShown": 0
+        }
+    }, {
+        "label": "vungle-toyblast-ios-piec-match3-tnt-and-rocket-start",
+        "settings": {
+            "PiecSettings.numberOfInteractions": 6,
+            "PiecSettings.numberOfMovesBeforeCtaShown": 0,
+            "PiecSettings.startingTiles": "tntAndRocket"
+        }
+    }, {
+        "label": "vungle-toyblast-ios-piec-match3-rocket-and-rocket-start",
+        "settings": {
+            "PiecSettings.numberOfInteractions": 6,
+            "PiecSettings.numberOfMovesBeforeCtaShown": 0,
+            "PiecSettings.startingTiles": "rocketAndRocket"
+        }
+    }, {
+        "label": "vungle-toyblast-ios-piec-match3-4-interactions",
+        "settings": {
+            "PiecSettings.numberOfInteractions": 4,
+            "PiecSettings.numberOfMovesBeforeCtaShown": 0
+        }
+    }, {
+        "label": "vungle-toyblast-ios-piec-match3-2-interactions",
+        "settings": {
+            "PiecSettings.numberOfInteractions": 2,
+            "PiecSettings.numberOfMovesBeforeCtaShown": 0
+        }
+    }, {
+        "label": "vungle-toyblast-ios-piec-match3-cta-show-after-2-moves",
+        "settings": {
+            "PiecSettings.numberOfInteractions": 6,
+            "PiecSettings.numberOfMovesBeforeCtaShown": 2
+        }
+    }, {
+        "label": "vungle-toyblast-ios-piec-match3-cta-message-download-now",
+        "settings": {
+            "PiecSettings.numberOfInteractions": 6,
+            "PiecSettings.numberOfMovesBeforeCtaShown": 0
+        },
+        "rename": [{
+            "file": "level-completed-2.png",
+            "to": "level-completed.png"
+        }, {
+            "file": "download-now.png",
+            "to": "cta.png"
+        }]
+    }],
+    "replaceIn": ["settings.js", "settings-tap.js", "settings-swipe.js"],
+    "delete": ["level-completed-2.png", "download-now.png"]
+}

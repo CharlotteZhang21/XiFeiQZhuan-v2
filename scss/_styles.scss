@@ -1,0 +1,213 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center 25%;
+    background-size: auto 110%;
+    background-image: url(../assets/bg.jpg);
+    // background-blend-mode: overlay;
+    background-color: #333;
+}
+
+canvas {
+    display: block;
+    cursor: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#vungle-close {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#vungle-close.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.layout-item {
+    position: absolute;
+    margin: auto;
+    z-index: 20;
+    pointer-events: none;
+
+}
+
+#logo {
+    width: 40%;
+    height: 3%;
+    top: 5%;
+    left: 0;
+    right: 0;
+}
+
+#logo-final {
+  width: 65%;
+  height: 10%;
+  top: 10%;
+  left: 0;
+  right: 0;
+  z-index: 100; }
+
+#bottom-container {
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+}
+
+#bottom-container #client-footer {
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    z-index: 900;
+}
+
+#bottom-container #client-footer img {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+#bottom-container.full {
+    opacity: 0;
+}
+.preload-font {
+ position: absolute;
+ bottom: -1000%; 
+}
+
+.item {
+    position: absolute;
+    margin: auto;
+}
+
+.item img {
+    width: 100%;
+}
+
+#cta-container, #cta-container-final {
+
+    bottom: 5%;
+    height: 5%;
+    width: 70%;
+    right: 0;
+    left: 0;
+
+}
+
+#cta-container-final {
+    width: 79%;
+    // bottom: 13%;
+}
+
+#character {
+    width: 110%;
+    height: 35%;
+    bottom: 0;
+}
+
+#chair {
+    transform: translate(-50%);
+    height: 20%;
+    width: 57%;
+    left: 55%;
+    top: 40%;
+}
+
+#dialog {
+    width: 88%;
+    height: 15%;
+    left: 0;
+    right: 0;
+    top: 17%;
+    display: inline-flex;
+}
+
+.options{
+    width: 30%;
+    float:left;
+    margin: auto;
+}
+
+#hand {
+    width: 10%;
+    height: 10%;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+@media all and (orientation:landscape) {
+
+    body{
+        background-size: 110%;
+        background-position-y: 20%;
+    }
+
+    #logo {
+        width: 20%;
+        left: 2%;
+        right: auto;
+        top: 10%;
+    }
+    
+    #logo-final {
+        width: 35%;
+        left: 0;
+        right: 0;
+    }
+
+    #character {
+
+        width: 55%;
+        height: 44%;
+        left: 10%;
+    }
+    #cta-container, #cta-container-final {
+        width: 33%;
+        height: 20%;
+        left: auto;
+        right: 2%;
+        bottom: 2%;
+    }
+    #cta-container-final {
+        width: 38%;
+        // height: 10%;
+        // left: -10%;
+        // right: -0;
+        // bottom: 10%;
+    }
+
+    #dialog{
+        width: 40%;
+        height: 18%;
+        top: 10%;
+    }
+
+    #chair {
+        width: 28%;
+        left: 51%;
+        top: 55%;
+    }
+}

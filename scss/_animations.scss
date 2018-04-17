@@ -1,0 +1,86 @@
+@-webkit-keyframes swinging {
+    0% {
+        -webkit-transform: rotate(5deg);
+    }
+    50% {
+        -webkit-transform: rotate(-5deg)
+    }
+    100% {
+        -webkit-transform: rotate(5deg);
+    }
+}
+
+@-webkit-keyframes tada {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    5%,
+    10% {
+        -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    }
+    15%,
+    25%,
+    35%,
+    45% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+    20%,
+    30%,
+    40% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+    50% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@-webkit-keyframes fall {
+    from {
+        -webkit-transform: translate(-50%, -50%);
+        -webkit-animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+        opacity: 0;
+        /* easeOutQuad */
+    }
+    35% {
+        -webkit-transform: translate(-50%, 8%);
+        -webkit-animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+        opacity: 1;
+        /* easeOutQuad */
+    }
+    85% {
+        -webkit-transform: translate(-50%, 8%);
+        -webkit-animation-timing-function: cubic-bezier(0.550, 0.085, 0.680, 0.530);
+        opacity: 1;
+        /* easeInQuad */
+    }
+    to {
+        -webkit-transform: translate(-50%, 100%);
+        -webkit-animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+        opacity: 0;
+        /* easeOutQuad */
+    }
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
