@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Playable ad test</title>
+    <meta name="viewport"
+          content="minimal-ui, user-scalable=0, width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+    <meta name="MobileOptimized" content="640">
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta http-equiv="Content-Type" content="text/html, charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta charset="utf-8"/>
+    <meta name="google" content="notranslate"/>
+    <!--<script type="text/javascript" src="mraid.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="./src/game/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/game/css/vungle.css"/>
+
+    <script>
+        var ASSETS = [
+            {"name": "background", "src": 'src/game/img/background.png'},
+            {"name": "background2", "src": 'src/game/img/background2.png'},
+            {"name": "logo", "src": 'src/game/img/logo.png'},
+            {"name": "cta", "src": 'src/game/img/cta.png'},
+            {"name": "hand", "src": 'src/game/img/hand.png'},
+            {"name": "arrow", "src": 'src/game/img/arrow.png'},
+            {"name": "arrow_disabled", "src": 'src/game/img/arrow_disabled.png'},
+            {"name": "hotmeter", "src": 'src/game/img/hotmeter.png'},
+            {"name": "hotmeter_fill", "src": 'src/game/img/hotmeter_fill.png'},
+            {"name": "hotmeter_arrow", "src": 'src/game/img/hotmeter_arrow.png'},
+            {"name": "girl/0", "src": 'src/game/img/girl_0.png'},
+            {"name": "girl/1", "src": 'src/game/img/girl_1.png'},
+            {"name": "girl/2", "src": 'src/game/img/girl_2.png'},
+            {"name": "girl/3", "src": 'src/game/img/girl_3.png'},
+            {"name": "girl/4", "src": 'src/game/img/girl_4.png'},
+            {"name": "girl/5", "src": 'src/game/img/girl_5.png'},
+            {"name": "girl/6", "src": 'src/game/img/girl_6.png'},
+//            {"name": "girl/final/0", "src": 'src/game/img/girl_final_0.png'},
+            {"name": "girl/final/1", "src": 'src/game/img/girl_final_1.png'},
+            {"name": "girl/final/2", "src": 'src/game/img/girl_final_2.png'},
+            {"name": "girl/final/3", "src": 'src/game/img/girl_final_3.png'},
+            {"name": "girl/final/4", "src": 'src/game/img/girl_final_4.png'},
+            {"name": "girl/final/5", "src": 'src/game/img/girl_final_5.png'},
+            {"name": "girl/final/6", "src": 'src/game/img/girl_final_6.png'},
+            {"name": "girl/final/7", "src": 'src/game/img/girl_final_7.png'},
+            {"name": "girl/final/8", "src": 'src/game/img/girl_final_8.png'},
+            {"name": "emperor/0", "src": 'src/game/img/emperor_0.png'},
+            {"name": "emperor/1", "src": 'src/game/img/emperor_1.png'},
+            {"name": "emperor/2", "src": 'src/game/img/emperor_2.png'},
+            {"name": "emperor/3", "src": 'src/game/img/emperor_3.png'},
+            {"name": "emperor/4", "src": 'src/game/img/emperor_4.png'},
+            {"name": "emperor/gold/0", "src": 'src/game/img/emperor_gold_0.png'},
+            {"name": "emperor/gold/1", "src": 'src/game/img/emperor_gold_1.png'},
+            {"name": "emperor/gold/2", "src": 'src/game/img/emperor_gold_2.png'},
+            {"name": "emperor/gold/3", "src": 'src/game/img/emperor_gold_3.png'},
+            {"name": "emperor/gold/4", "src": 'src/game/img/emperor_gold_4.png'},
+            {"name": "emperor/gold/5", "src": 'src/game/img/emperor_gold_5.png'},
+            {"name": "emperor/gold/6", "src": 'src/game/img/emperor_gold_6.png'},
+            {"name": "emperor/text_frame", "src": 'src/game/img/emperor_text_frame.png'},
+            {"name": "emperor/text/0", "src": 'src/game/img/emperor_text_0.png'},
+            {"name": "emperor/text/1", "src": 'src/game/img/emperor_text_1.png'},
+            {"name": "gold", "src": 'src/game/img/gold.png'},
+            {"name": "text/0", "src": 'src/game/img/text_0.png'},
+            {"name": "text/1", "src": 'src/game/img/text_1.png'},
+            {"name": "text/2", "src": 'src/game/img/text_2.png'},
+            {"name": "text_frame", "src": 'src/game/img/text_frame.png'}
+        ];
+    </script>
+    <script type="text/javascript" src="./src/game/js/config.js"></script>
+    <script type="text/javascript" src="./src/game/js/vendor/pixi.min.js"></script>
+    <script type="text/javascript" src="./src/game/js/vendor/pixi-particles.min.js"></script>
+    <script type="text/javascript" src="./src/game/js/vendor/TweenLite.min.js"></script>
+    <script type="text/javascript" src="./src/game/js/vendor/TimelineMax.min.js"></script>
+    <script type="text/javascript" src="./src/game/js/vendor/easing/EasePack.min.js"></script>
+    <script type="text/javascript" src="./src/game/js/vendor/plugins/PixiPlugin.min.js"></script>
+    <script type="text/javascript" src="./src/game/js/Sprite.js"></script>
+    <script type="text/javascript" src="./src/game/js/Background.js"></script>
+    <script type="text/javascript" src="./src/game/js/Field.js"></script>
+    <script type="text/javascript" src="./src/game/js/Final.js"></script>
+    <script type="text/javascript" src="./src/game/js/Game.js"></script>
+
+</head>
+<body>
+<span style="font-family: 'vungicon-v2-1';"></span>
+<div id="vungle-header" class="portrait-light landscape-light"><a id="vungle-close" href="javascript:void(0)" onclick="doSomething('close')" style="display: none;"><span class="vungicon-close"></span></a></div>
+<div id="vungle-footer" class="portrait-light landscape-light portrait-center landscape-right"><span class="footer vungicon-vungle"></span></div>
+<script type="text/javascript" src="./src/game/js/index.js"></script>
+</body>
+</html>

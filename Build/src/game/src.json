@@ -1,0 +1,15 @@
+[
+  "assets.js",
+  "vendor/pixi.min.js",
+  "vendor/pixi-particles.min.js",
+  "vendor/TweenLite.min.js",
+  "vendor/TimelineMax.min.js",
+  "vendor/easing/EasePack.min.js",
+  "vendor/plugins/PixiPlugin.min.js",
+  "Sprite.js",
+  "Game.js",
+  "Background.js",
+  "Field.js",
+  "Final.js",
+  "index.js"
+]

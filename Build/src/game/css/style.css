@@ -1,0 +1,12 @@
+body {
+    -ms-touch-action: none;
+    position: fixed; margin: 0; padding: 0; box-sizing: border-box;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: #F7F7F7;
+    color: #999999;
+}
+
+.playable-view {
+    position: absolute; box-sizing: border-box;
+    left: 0; top: 0; right: 0; bottom: 0;
+}
