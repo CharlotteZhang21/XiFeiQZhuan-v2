@@ -25,16 +25,6 @@ class CtaButton extends Phaser.Group {
 		this.x = containerX + this.containerWidth / 2;
 		this.y = containerY + this.containerHeight / 2;
 
-		// if(document.body.scrollWidth < document.body.scrollHeight){
-		// 	//portrait
-		// 	this.x = containerX * 2;
-		// 	this.y = containerY;
-		// }else{
-		// 	this.x = containerX*1.4;
-		// 	this.y = containerY;
-
-		// }
-
 		this.scale.x = this.containerWidth/this.button.width;
 		this.scale.y = this.scale.x;
 

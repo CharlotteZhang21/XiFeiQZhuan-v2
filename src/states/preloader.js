@@ -31,19 +31,18 @@
 
          this.game.load.image('logo', PiecSettings.assetsDir + 'logo.png');
 
+         this.game.load.image('arrow', PiecSettings.assetsDir + 'arrow.png');
+
+         this.game.load.image('hand', PiecSettings.assetsDir + 'hand.png');
+         this.game.load.image('arrow-disabled', PiecSettings.assetsDir + 'arrow_disabled.png');
+
 
          this.game.load.image('cta', PiecSettings.assetsDir + 'cta.png');
 
-         this.game.load.image('character', PiecSettings.assetsDir + 'character.png');
+         this.game.load.image('gold', PiecSettings.assetsDir + 'gold.png');
 
-         this.game.load.image('armchair_old', PiecSettings.assetsDir + 'armchair_old.png');
-         this.game.load.image('armchair_blue', PiecSettings.assetsDir + 'armchair_blue.png');
-         this.game.load.image('armchair_orange', PiecSettings.assetsDir + 'armchair_orange.png');
-         this.game.load.image('armchair_yellow', PiecSettings.assetsDir + 'armchair_yellow.png');
-
-         this.game.load.image('dialogBg', PiecSettings.assetsDir + 'box_bg.png');
-
-         this.game.load.image('hand', PiecSettings.assetsDir + 'hand.png');
+         this.game.load.image('girlDialogBg', PiecSettings.assetsDir + 'box_bg.png');
+         this.game.load.image('emperorDialogBg', PiecSettings.assetsDir + 'emperor_text_frame.png');
 
          this.game.load.image('spark-particle', PiecSettings.assetsDir + 'spark-particle.png');
          this.game.load.image('star-particle', PiecSettings.assetsDir + 'star-particle.png');
@@ -56,6 +55,37 @@
             frameRate: 60,
             scale: 1
          };
+
+         if(PiecSettings.girls != undefined ) {
+             for (var key in PiecSettings.girls) {
+                var girls = PiecSettings.girls[key];
+                  if(girls.length > 0) {
+                    for (var i=0; i< girls.length; i++) {
+                        var spriteName = key + "_" +i; 
+                        this.game.load.image(spriteName, PiecSettings.assetsDir + spriteName + '.png');
+                    }
+                  }
+             };
+         }
+
+         if(PiecSettings.options != undefined) {
+            for(var i =0; i < PiecSettings.options.length; i ++) {
+                var spriteName = PiecSettings.options[i];
+                this.game.load.image(spriteName, PiecSettings.assetsDir +  "btn_" +  spriteName + '.png');
+            }
+         }
+
+
+
+         if(PiecSettings.text != undefined) {
+            for(var key in PiecSettings.text)
+                if(PiecSettings.text[key].length > 0) {
+                    for(var i=0; i < PiecSettings.text[key].length; i ++) {
+                        var spriteName = PiecSettings.text[key][i];
+                        this.game.load.image(spriteName, PiecSettings.assetsDir +spriteName + '.png');
+                    }
+                }
+         }
 
          for (var key in Atlas.default) {
             if (Atlas.default.hasOwnProperty(key)) {

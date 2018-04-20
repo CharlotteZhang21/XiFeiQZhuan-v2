@@ -1,98 +1,121 @@
 import * as FxRenderer from '../utils/fx-renderer.js';
+import * as Utils from '../utils/util';
 
 class Character extends Phaser.Group {
-	constructor(game, fxEffectsLayer) {
+	constructor(game, characterName, fxEffectsLayer) {
 		super(game);
 
 		this.fxEffectsLayer = fxEffectsLayer;
-
-
-		this.sadCharacter();
-
+		this.characterName = characterName;
 
 	}
 
-	//sad character intro
-	sadCharacter(){
-		 this.sadAni = FxRenderer.playFx(this.game, this.fxEffectsLayer, "sad");
+	//character intro
+	initCharacter(name){
+
+		this.originalAni = FxRenderer.playFx(this.game, this.fxEffectsLayer, name);
+		this.happyAni = this.originalAni[0];
+		this.happyAni.sendToBack();
+
 	}
 
 	//happy character
 
-	changeToHappy(){
-		console.log("happy yo");
-		this.sadAni[0].visible = false;
+	changeToHappy(name){
 
-		 var happyAni = FxRenderer.playFx(this.game, this.fxEffectsLayer, "congrats");
+		this.hide(50);
+		console.log(name);
+		var happyAni = FxRenderer.playFx(this.game, this.fxEffectsLayer, name);
+		this.happyAni = happyAni[0];
+		this.happyAni.sendToBack();
 	}
 
-	createDialog(){
 
-		this.dialogBg = this.game.add.sprite(0, 0, 'dialogBg');
-		this.add(this.dialogBg);
-		this.fitInContainer(this.dialogBg, 'dialog');
-		this.createText("Is that my chair?!");
+	animate(delay = 300, duration = 1000){
+		
+		var id = this.characterName + '-final';
+		var container = document.getElementById(id);
+		var finalX = Utils.getContainerX(id) + Utils.getContainerWidth(id)/2;
+		var finalY = Utils.getContainerY(id) + Utils.getContainerHeight(id)/2;
+		var finalWidth = Utils.getContainerWidth(id);
+		var finalHeight = Utils.getContainerHeight(id);
+		 this.game.time.events.add(delay, function(){
+		 	Utils.display(this.game, this, 100);
+		 	this.game.add.tween(this.happyAni).to({x: finalX, y: finalY}, duration, Phaser.Easing.Linear.None, true, 0);
+		 	// this.game.add.tween(this.happyAni.scale).to({x: finalWidth, y: finalHeight}, duration, Phaser.Easing.Linear.None, true, 0);
+		 
+		 },this);
+
 
 	}
 
-	fitInContainer(el, divName) {
 
-		var container = document.getElementById(divName);
-		var containerWidth = container.offsetWidth * window.devicePixelRatio;
-		var containerHeight = container.offsetHeight * window.devicePixelRatio;
-		var containerX = container.getBoundingClientRect().left * window.devicePixelRatio;
-		var containerY = container.getBoundingClientRect().top * window.devicePixelRatio;
+	
+	spawnGold(){
+		 for (var i = 0; i < 10; i++) {
 
-		el.scale.x = containerWidth / el.width;
-		el.scale.y = el.scale.x;
+            var scaleMultiplier = .2;
 
-		el.x = containerX;
-		el.y = containerY;
+            var gold = new Phaser.Sprite(this.game, 0, 0, 'gold');
+            this.add(gold);
+            // this.golds.push(gold);
+            gold.anchor.set(0.5);
+
+            if (this.game.global.windowWidth > this.game.global.windowHeight) {
+                gold.scale.x = this.happyAni.width / gold.width * scaleMultiplier;
+                gold.scale.y = gold.scale.x;
+            } else {
+                gold.scale.x = this.happyAni.width / gold.width * scaleMultiplier;
+                gold.scale.y = gold.scale.x;
+            }
+
+            gold.x = this.happyAni.x + this.happyAni.width * .5 / (i+1);
+            // console.log(this.happyAni.y);
+            gold.y = this.happyAni.y;
+            gold.angle = Math.random() * 45;
+
+
+            gold.alpha = 0;
+
+            var initialScale = gold.scale.x;
+            var initialY = gold.y;
+            var initialX = gold.x;
+
+            var finalXMultiplier = 0.3;
+            if (this.game.global.windowWidth > this.game.global.windowHeight) {
+                finalXMultiplier = 0.2;
+            }
+            //     if (this.game.global.windowWidth >= 768) {
+            //         finalXMultiplier = 0.5;
+            //     }
+            // }
+
+            var finalX = this.happyAni.x + this.happyAni.width * .4 / (i+1);
+            var finalYMultiplier = 5;
+            if (this.game.global.windowWidth > this.game.global.windowHeight) {
+                finalYMultiplier = 2.5;
+            }
+            var finalY = this.happyAni.y + this.happyAni.height / 2;
+            var finalScale = initialScale * .2;
+
+            var delay = i * 100 * Math.random() ;
+            var duration = Math.random() * 1000 + 800;
+
+            Utils.starFloatWithDelayCustom2(this.game, gold, finalX, finalY, finalScale, duration, delay, Phaser.Easing.Quadratic.Out)
+
+            // Utils.goldFloatWithDelayCustom2(this.game, gold, finalX, finalY, finalScale, duration, delay, Phaser.Easing.Quadratic.Out);
+            // this.girl.bringToTop();
+        }
 	}
 
-	createText(text) {
 
-		var container = document.getElementById('dialog-text');
-		var containerWidth = container.offsetWidth * window.devicePixelRatio;
-		var containerHeight = container.offsetHeight * window.devicePixelRatio;
-		var containerX = container.getBoundingClientRect().left * window.devicePixelRatio;
-		var containerY = container.getBoundingClientRect().top * window.devicePixelRatio;
 
-		this.fontSize = containerHeight * .7;
 
-		var style = {
-			font: "bold " + this.fontSize + "px " + PiecSettings.fontFamily,
-		};
+	hide(delay = 100) {
+		this.game.time.events.add(delay, function(){
+			this.originalAni[0].visible = false;
 
-		this.textField = new Phaser.Text(this.game, containerWidth/2, containerHeight/2, text, style);
-		this.add(this.textField);
-		this.textField.anchor.set(0.5, 0.5);
-		this.textField.align = 'center';
-		this.textField.padding.set(this.fontSize/2, 0);
-		// this.textField.y += this.fontSize/2;
-
-		if (PiecSettings.fontColor != null) {
-			this.textField.stroke = "black";
-			this.textField.strokeThickness = 2;
-			this.textField.fill = PiecSettings.fontColor;
-			this.textField.setShadow(2,3,'rgb(0,0,0)', 0);
-		} else {
-			this.textField.stroke = "#ff9d1b";
-			this.textField.strokeThickness = 5;
-
-			// var gradient = this.textField.context.createLinearGradient(0, 0, 0, this.textField.height);
-			// gradient.addColorStop(0, '#fffea5');
-			// gradient.addColorStop(1, '#ffab02');
-
-			// this.textField.fill = gradient;
-		}
-	}
-
-	hide() {
-		this.spinButton.button.inputEnabled = false;
-		// if (this.dissapearing || PiecSettings.spins.length == this.game.global.spin){
-		// 	var tween = this.game.add.tween(this).to({alpha: 0}, 3000, Phaser.Easing.Quadratic.In, true, 0);
-		// }
+		},this);
 	}
 
 	fade() {
@@ -101,12 +124,6 @@ class Character extends Phaser.Group {
 
 	}
 
-	show() {
-		this.spinButton.button.inputEnabled = true;
-		if (this.dissapearing && PiecSettings.spins.length != this.game.global.spin){
-			var tween = this.game.add.tween(this).to({y: 0}, 300, Phaser.Easing.Quadratic.In, true, 0);
-		}
-	}
 }
 
 export default Character;

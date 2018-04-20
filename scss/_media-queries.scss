@@ -40,38 +40,51 @@
     }
 }
 
-@media all and (min-width: 768px) and (orientation: portrait) {
-    #dialog{
-        width: 50%;
-        height: 10%;
-    }
-    #character {
+@media all and (min-height: 768px) and (orientation: portrait) {
+    #girlDialog{
         width: 80%;
+        height: 10%;
+        top: 5%;
+    }
+
+    #logo-final {
+        width: 50%;
+        top: 5%;
     }
 
     #cta-container, #cta-container-final {
         width: 60%;
     }
 
-    #chair {
-        width: 45%;
+    #girl, #girl-final {
+        width: 43%;
+    }
+
+    #emperor, #emperor-final {
+        width: 50%;
+    }
+
+    #emperorDialog{
+        top: 2%;
     }
 }
 
 @media all and (min-width: 768px) and (orientation: landscape) {
 
-    body {
-        background-position-y: 10%;
-    }
-   #dialog {
-    width: 30%;
+   #girlDialog {
+    width: 50%;
     height: 10%;
    }
 
-   #chair {
+   #girl, #girl-final {
     width: 30%;
-    top: 45%;
-    left: 52%; 
+    height: 80%;
+    // top: 5%;
+    // left: 52%; 
+   }
+
+   #emperor, #emperor-final {
+    width: 30%;
    }
 }
 
@@ -106,14 +119,26 @@
         height: 12%;
     }
 
-    #chair {
+    #cta-container, #cta-container-final{
         width: 60%;
     }
 }
 
 /*iPhone X landscape*/
 @media (min-aspect-ratio: 724/354) and (orientation: landscape) {
-    #chair {
-        top: 62%;
+    #girl, #girl-final {
+        width: 22%;
+        height: 78%;
+        top: 20%;
+    }
+
+    #emperor, #emperor-final{
+        height: 24%;
+        width: 24%;
+    }
+
+    #girlDialog{
+        width: 35%;
+        right: 12%;
     }
 }

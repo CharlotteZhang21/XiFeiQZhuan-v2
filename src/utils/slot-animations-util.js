@@ -29,7 +29,7 @@ export function playAnimations(spritesheet, xPositions, yPositions, delays, loop
 		var sprite = game.add.sprite( containerX + xPositions[i] * hUnit, containerY + yPositions[i] * vUnit, spritesheet);
 		layer.add(sprite);
 		sprite.anchor.set(anchor);
-		sprite.animations.add('animation');
+		var ani = sprite.animations.add('animation');
 		sprite.alpha = 0;
 		sprite.persistent = persistent;
 		playAnimation(game, sprite, delays[i], speed);

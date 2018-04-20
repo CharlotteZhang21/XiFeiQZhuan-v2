@@ -16,7 +16,7 @@ class Boot extends Phaser.State {
         // custom game events here        
         game.onGameComplete = new Phaser.Signal(); // generic event hook
         game.onCompleteLevel = new Phaser.Signal(); // generic event hook
-        game.onChange = new Phaser.Signal(); // generic event hook
+        game.onInteract = new Phaser.Signal(); // generic event hook
         game.onReelSpinComplete = new Phaser.Signal();
         game.onSpinComplete = new Phaser.Signal();
 
@@ -50,26 +50,6 @@ class Boot extends Phaser.State {
 
         // stretch game to fit window
         window.onresize = function() {
-
-            // // resize game
-            // // game.scale.setGameSize(
-            // //     window.innerWidth * window.devicePixelRatio,
-            // //     window.innerHeight * window.devicePixelRatio
-            // // );
-
-            // // get current state
-            // var currentState = game.state.states[game.state.current];
-
-            // if (currentState.resize) {
-
-            //     // resize the state
-            //     currentState.resize();
-            // }
-
-            // // if (typeof piec !== 'undefined') {
-            // //     // public API methods
-            // //     piec.onResize();
-            // // }
 
             game.scale.setGameSize(document.body.clientWidth * window.devicePixelRatio, document.body.clientHeight * window.devicePixelRatio);
             game.scale.refresh();
@@ -108,7 +88,9 @@ class Boot extends Phaser.State {
 
     initGlobalVariables() {
         this.game.global = {
-            selection: 0,
+            selectedStyle: 'innocent',
+            currentOutfit: 0,
+            text: 0,
             isComplete: false,
         };
     }

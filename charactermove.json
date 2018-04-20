@@ -1,0 +1,68 @@
+{"frames": {
+
+"emperor_gold_0.png":
+{
+	"frame": {"x":1,"y":1,"w":255,"h":472},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":255,"h":472},
+	"sourceSize": {"w":255,"h":472}
+},
+"emperor_gold_1.png":
+{
+	"frame": {"x":258,"y":1,"w":255,"h":472},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":255,"h":472},
+	"sourceSize": {"w":255,"h":472}
+},
+"emperor_gold_2.png":
+{
+	"frame": {"x":515,"y":1,"w":255,"h":472},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":255,"h":472},
+	"sourceSize": {"w":255,"h":472}
+},
+"emperor_gold_3.png":
+{
+	"frame": {"x":772,"y":1,"w":255,"h":472},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":255,"h":472},
+	"sourceSize": {"w":255,"h":472}
+},
+"emperor_gold_4.png":
+{
+	"frame": {"x":1029,"y":1,"w":255,"h":472},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":255,"h":472},
+	"sourceSize": {"w":255,"h":472}
+},
+"emperor_gold_5.png":
+{
+	"frame": {"x":1286,"y":1,"w":255,"h":472},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":255,"h":472},
+	"sourceSize": {"w":255,"h":472}
+},
+"emperor_gold_6.png":
+{
+	"frame": {"x":1543,"y":1,"w":255,"h":472},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":255,"h":472},
+	"sourceSize": {"w":255,"h":472}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "emperor-reward.png",
+	"format": "RGBA8888",
+	"size": {"w":1799,"h":474},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b86186ba5ec8b244c7dd8dcc1c9c3527:4bb544d78143b60b31dab57e73b29d30:71b9823c88d6c9462f0a79a0e3954852$"
+}
+}
