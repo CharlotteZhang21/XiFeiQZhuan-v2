@@ -31,11 +31,8 @@ class Girl extends Phaser.Group {
 
 	hideWithTween(delay, duration){
 		var initScale = this.girl.scale.x;
-		var scaleTween = this.game.add.tween(this.girl.scale).to({x: [initScale, 0], y: [initScale, 0]}, duration, Phaser.Easing.Quadratic.In, true, delay);
-	
-		scaleTween.onComplete.add(function(){
-			this.girl.alpha  = 0;
-		},this);
+		var scaleTween = this.game.add.tween(this.girl.scale).to({x: [initScale, 0], y: [initScale, 0]}, duration, Phaser.Easing.Linear.None, true, delay);
+    	var alphaTween = this.game.add.tween(this.girl).to({alpha: 0}, duration, Phaser.Easing.Linear.None, true, delay);
 	}	
 
 
